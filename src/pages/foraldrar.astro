@@ -1,0 +1,93 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const infoSections = [
+  {
+    title: 'Vår pedagogik',
+    icon: '📚',
+    content: 'På Ängen arbetar vi utifrån läroplanen med fokus på lek, lärande och omsorg. Vi ser varje barn som en kompetent individ med egna tankar, idéer och behov. Vår verksamhet präglas av ett utforskande förhållningssätt där barnens nyfikenhet och frågor leder vägen.'
+  },
+  {
+    title: 'Mat och måltider',
+    icon: '🍎',
+    content: 'Vi serverar näringsrik frukost, lunch och mellanmål. All mat lagas i vårt eget kök av vår duktiga kock Anna. Vi använder i möjligaste mån ekologiska och närproducerade råvaror. Specialkost tillgodoses vid behov efter samtal med föräldrar och i samråd med barnsjuksköterska.'
+  },
+  {
+    title: 'Utomhusvistelse',
+    icon: '🌳',
+    content: 'Vi spenderar minst två timmar utomhus varje dag, oavsett väder. Vi har en stor naturtomt med skogsdunge, odlingar och lekytor. Varje vecka gör vi också utflykter till närliggande skogsområden och parker.'
+  },
+  {
+    title: 'Föräldrasamarbete',
+    icon: '🤝',
+    content: 'Vi tror på ett nära samarbete med föräldrar. Varje termin håller vi utvecklingssamtal, föräldramöten och sociala aktiviteter. Ni är alltid välkomna att stanna kvar på morgonen eller komma tidigare på eftermiddagen för att delta i verksamheten.'
+  },
+  {
+    title: 'Avgifter',
+    icon: '💰',
+    content: 'Förskoleavgiften baseras på hushållets inkomst. Maxtaxa gäller, vilket innebär att den högsta avgiften för första barnet är 1 510 kr/månad. För andra barnet betalar du 70% och för tredje barnet 30%. Mat ingår i avgiften.'
+  },
+  {
+    title: 'Kontakt och frånvaro',
+    icon: '📞',
+    content: 'Vid frånvaro anmäl detta via appen Tyra eller ring oss på 08-123 45 67. Vid sjukdom ska barnet vara symtomfritt i minst 48 timmar innan det återvänder till förskolan. Vid frågor eller funderingar, tveka inte att kontakta oss!'
+  }
+];
+
+const documents = [
+  { name: 'Läroplan för förskolan', link: '#' },
+  { name: 'Vår likabehandlingsplan', link: '#' },
+  { name: 'Köregler och avgifter', link: '#' },
+  { name: 'Matsedel vår 2026', link: '#' },
+  { name: 'Årsplan 2025/2026', link: '#' }
+];
+---
+
+<Layout title="För föräldrar">
+  <div class="bg-gradient-to-br from-[#FEFAE0] to-[#E8F4F8] py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="font-display text-5xl text-center text-gray-800 mb-4">
+        Information för <span class="chalk-underline">föräldrar</span>
+      </h1>
+      <p class="text-center text-gray-600 text-lg max-w-2xl mx-auto">
+        Här hittar du allt du behöver veta om vår verksamhet, regler och praktisk information.
+      </p>
+    </div>
+  </div>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {infoSections.map((section) => (
+          <div class="bg-[#FEFAE0] rounded-2xl p-8 hover:shadow-md transition-shadow">
+            <div class="text-4xl mb-4">{section.icon}</div>
+            <h2 class="font-display text-2xl text-[#5B8C5A] mb-4">{section.title}</h2>
+            <p class="text-gray-600 leading-relaxed">{section.content}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-[#E8F4F8]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-4xl text-center text-gray-800 mb-12">
+        Viktiga <span class="chalk-underline">dokument</span>
+      </h2>
+      
+      <div class="bg-white rounded-2xl shadow-sm p-8">
+        <ul class="space-y-4">
+          {documents.map((doc) => (
+            <li>
+              <a href={doc.link} class="flex items-center gap-4 p-4 rounded-xl hover:bg-[#FEFAE0] transition-colors group">
+                <span class="text-2xl group-hover:scale-110 transition-transform">📄</span>
+                <span class="text-lg text-gray-700 group-hover:text-[#5B8C5A]">{doc.name}</span>
+                <span class="ml-auto text-[#5B8C5A] opacity-0 group-hover:opacity-100 transition-opacity">Ladda ner →</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+</Layout>

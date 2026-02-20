@@ -1,0 +1,99 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const calendarEvents = [
+  { date: '20', month: 'Mars', title: 'Utflykt till Skansen', time: '09:00-14:00', location: 'Skansen', description: 'Alla avdelningar åker till Skansen för att uppleva våren. Ta med matsäck!' },
+  { date: '25', month: 'Mars', title: 'Föräldramöte', time: '18:00-19:30', location: 'Matsalen', description: 'Information om vårens aktiviteter och utvecklingssamtal.' },
+  { date: '5', month: 'Apr', title: 'Påskpyssel och äggjakt', time: 'Hela dagen', location: 'Förskolan', description: 'Påskpyssel på förmiddagen och äggjakt på eftermiddagen.' },
+  { date: '15', month: 'Apr', title: 'Vårstädning av gården', time: '09:00-11:00', location: 'Utegården', description: 'Vi städar och förbereder gården för våren. Föräldrar välkomna att hjälpa till!' },
+  { date: '30', month: 'Apr', title: 'Valborgsfirande', time: '14:00-16:00', location: 'Utegården', description: 'Traditionellt valborgsfirande med sång och fika.' },
+  { date: '10', month: 'Maj', title: 'Mors dag-firande', time: '14:00-15:30', location: 'Matsalen', description: 'Barnen bjuder på sång och fika för att fira alla mammor.' },
+  { date: '22', month: 'Maj', title: 'Utflykt till Kista Gård', time: '09:30-13:00', location: 'Kista Gård', description: 'Vi besöker bondgården och träffar alla djuren.' },
+  { date: '5', month: 'Jun', title: 'Sommaravslutning', time: '15:00-17:00', location: 'Utegården', description: 'Sommaravslutning med lekar, fika och uppträdande. Alla familjer är välkomna!' }
+];
+
+const regularActivities = [
+  { day: 'Måndag', activities: ['Förskolebiblioteket', 'Skogsmulle (uteaktivitet)'] },
+  { day: 'Tisdag', activities: ['Musik med Anna', 'Yoga för barn'] },
+  { day: 'Onsdag', activities: ['Språklek', 'Bakning'] },
+  { day: 'Torsdag', activities: ['Rytmik och dans', 'Utflykt till skogen'] },
+  { day: 'Fredag', activities: ['Fri lek och temaarbete', 'Samling med sång'] }
+];
+---
+
+<Layout title="Kalendarium">
+  <div class="bg-gradient-to-br from-[#FEFAE0] to-[#E8F4F8] py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="font-display text-5xl text-center text-gray-800 mb-4">
+        <span class="chalk-underline">Kalendarium</span>
+      </h1>
+      <p class="text-center text-gray-600 text-lg max-w-2xl mx-auto">
+        Här hittar du alla kommande aktiviteter och viktiga datum för läsåret.
+      </p>
+    </div>
+  </div>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-4xl text-gray-800 mb-12 text-center">
+        Kommande <span class="chalk-underline">händelser</span>
+      </h2>
+      
+      <div class="space-y-6">
+        {calendarEvents.map((event, index) => (
+          <div class={`flex gap-6 p-6 rounded-2xl transition-colors ${index % 2 === 0 ? 'bg-[#E8F4F8] hover:bg-[#5B8C5A]/10' : 'bg-[#FEFAE0] hover:bg-[#F4A261]/10'}`}>
+            <div class={`flex-shrink-0 w-24 h-24 rounded-2xl flex flex-col items-center justify-center text-white ${index % 2 === 0 ? 'bg-[#5B8C5A]' : 'bg-[#F4A261]'}`}>
+              <span class="text-sm uppercase tracking-wider">{event.month}</span>
+              <span class="font-display text-4xl">{event.date}</span>
+            </div>
+            <div class="flex-grow">
+              <h3 class="font-display text-2xl text-gray-800 mb-2">{event.title}</h3>
+              <div class="flex flex-wrap gap-4 text-sm text-gray-500 mb-3">
+                <span class="flex items-center gap-1">🕐 {event.time}</span>
+                <span class="flex items-center gap-1">📍 {event.location}</span>
+              </div>
+              <p class="text-gray-600">{event.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-[#E8F4F8]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-4xl text-gray-800 mb-12 text-center">
+        Regelbundna <span class="chalk-underline">aktiviteter</span>
+      </h2>
+      
+      <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
+        {regularActivities.map((day, index) => (
+          <div class={`p-6 ${index !== regularActivities.length - 1 ? 'border-b border-gray-100' : ''}`}>
+            <div class="flex flex-col md:flex-row md:items-center gap-4">
+              <div class="w-32 flex-shrink-0">
+                <span class="font-display text-2xl text-[#5B8C5A]">{day.day}</span>
+              </div>
+              <div class="flex flex-wrap gap-3">
+                {day.activities.map((activity) => (
+                  <span class="px-4 py-2 bg-[#FEFAE0] rounded-full text-gray-700">{activity}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="bg-[#5B8C5A] rounded-2xl p-8 md:p-12 text-white">
+        <h2 class="font-display text-3xl md:text-4xl mb-4">Vill du lägga till i din kalender?</h2>
+        <p class="text-white/80 mb-6">Prenumerera på vårt kalenderflöde så missar du inga viktiga datum.</p>
+        <button class="px-8 py-4 bg-white text-[#5B8C5A] font-display text-xl rounded-full hover:bg-[#FEFAE0] transition-colors">
+          Prenumerera på kalender 📅
+        </button>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,138 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+const navItems = [
+  { href: '/', label: 'Startsida' },
+  { href: '/nyheter', label: 'Nyheter' },
+  { href: '/foraldrar', label: 'För föräldrar' },
+  { href: '/ansokan', label: 'Ansökan' },
+  { href: '/kalendarium', label: 'Kalendarium' },
+];
+---
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title} | Förskolan Ängen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="min-h-screen flex flex-col font-body text-gray-800">
+  <!-- Header -->
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <!-- Logo -->
+        <a href="/" class="flex items-center space-x-3 group">
+          <div class="w-12 h-12 bg-[#5B8C5A] rounded-full flex items-center justify-center float-gentle">
+            <span class="text-white text-2xl">🌱</span>
+          </div>
+          <span class="font-display text-3xl text-[#5B8C5A] group-hover:text-[#7FB069] transition-colors">
+            Ängen
+          </span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex space-x-8">
+          {navItems.map((item) => (
+            <a
+              href={item.href}
+              class="font-display text-xl text-gray-700 hover:text-[#5B8C5A] transition-colors relative group"
+            >
+              {item.label}
+              <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#F4A261] group-hover:w-full transition-all duration-300"></span>
+            </a>
+          ))}
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="menu-btn"
+          class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+          aria-label="Öppna meny"
+        >
+          <div class="w-6 h-6 relative">
+            <span class="ball-icon absolute inset-0 flex items-center justify-center text-2xl">⚽</span>
+            <span class="close-icon absolute inset-0 flex items-center justify-center text-2xl hidden">✕</span>
+          </div>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+      <div class="px-4 py-4 space-y-2 menu-slide-in">
+        {navItems.map((item, index) => (
+          <a
+            href={item.href}
+            class="block font-display text-xl text-gray-700 hover:text-[#5B8C5A] hover:bg-[#FEFAE0] px-4 py-3 rounded-lg transition-colors"
+            style={`animation-delay: ${index * 50}ms`}
+          >
+            {item.label}
+          </a>
+        ))}
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-grow">
+    <slot />
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#5B8C5A] text-white mt-auto">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="font-display text-2xl mb-4">Förskolan Ängen</h3>
+          <p class="text-white/80">En plats där barn växer, leker och lär tillsammans.</p>
+        </div>
+        <div>
+          <h4 class="font-display text-xl mb-4">Kontakt</h4>
+          <p class="text-white/80">📍 Ängsvägen 12, 123 45 Stockholm</p>
+          <p class="text-white/80">📞 08-123 45 67</p>
+          <p class="text-white/80">✉️ info@angen-forskola.se</p>
+        </div>
+        <div>
+          <h4 class="font-display text-xl mb-4">Öppettider</h4>
+          <p class="text-white/80">Måndag–Fredag: 06:30–18:30</p>
+          <p class="text-white/80">Lördag–Söndag: Stängt</p>
+        </div>
+      </div>
+      <div class="border-t border-white/20 mt-8 pt-8 text-center text-white/60 text-sm">
+        © 2026 Förskolan Ängen. Alla rättigheter förbehållna.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const ballIcon = menuBtn?.querySelector('.ball-icon');
+    const closeIcon = menuBtn?.querySelector('.close-icon');
+    let isOpen = false;
+
+    menuBtn?.addEventListener('click', () => {
+      isOpen = !isOpen;
+      mobileMenu?.classList.toggle('hidden');
+      ballIcon?.classList.toggle('hidden');
+      closeIcon?.classList.toggle('hidden');
+      
+      // Trigger ball animation
+      if (ballIcon && !isOpen) {
+        ballIcon.classList.add('ball-animation');
+        setTimeout(() => ballIcon.classList.remove('ball-animation'), 600);
+      }
+    });
+  </script>
+</body>
+</html>

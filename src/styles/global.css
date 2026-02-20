@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Patrick Hand', cursive;
+  --font-body: 'Inter', sans-serif;
+  --color-primary: #5B8C5A;
+  --color-primary-light: #7FB069;
+  --color-accent: #F4A261;
+  --color-sand: #FEFAE0;
+  --color-sky: #E8F4F8;
+}
+
+/* Chalk underline effect */
+.chalk-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.chalk-underline::after {
+  content: '';
+  position: absolute;
+  left: -5px;
+  right: -5px;
+  bottom: 2px;
+  height: 8px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 10' preserveAspectRatio='none'%3E%3Cpath d='M0 5 Q 25 0, 50 5 T 100 5' stroke='%235B8C5A' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center;
+  background-size: 100% 100%;
+  opacity: 0.6;
+  z-index: -1;
+}
+
+/* Bouncing ball animation */
+@keyframes bounce-ball {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-15px) rotate(90deg); }
+  50% { transform: translateY(0) rotate(180deg); }
+  75% { transform: translateY(-10px) rotate(270deg); }
+}
+
+.ball-animation {
+  animation: bounce-ball 0.6s ease-out;
+}
+
+/* Menu slide animation */
+@keyframes slide-in {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.menu-slide-in {
+  animation: slide-in 0.3s ease-out;
+}
+
+/* Gentle float animation for decorative elements */
+@keyframes gentle-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.float-gentle {
+  animation: gentle-float 3s ease-in-out infinite;
+}
+
+/* Wiggle animation for hover effects */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-1deg); }
+  50% { transform: rotate(1deg); }
+}
+
+.wiggle-hover:hover {
+  animation: wiggle 0.3s ease-in-out;
+}
+
+/* Font utilities */
+.font-display {
+  font-family: 'Patrick Hand', cursive;
+}
+
+.font-body {
+  font-family: 'Inter', sans-serif;
+}

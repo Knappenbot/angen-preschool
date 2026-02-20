@@ -1,0 +1,151 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Startsida">
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-br from-[#E8F4F8] via-[#FEFAE0] to-[#E8F4F8] py-20 md:py-32 overflow-hidden">
+    <!-- Decorative elements -->
+    <div class="absolute top-10 left-10 w-20 h-20 bg-[#F4A261] rounded-full opacity-20 float-gentle" style="animation-delay: 0s;"></div>
+    <div class="absolute top-40 right-20 w-16 h-16 bg-[#5B8C5A] rounded-full opacity-20 float-gentle" style="animation-delay: 1s;"></div>
+    <div class="absolute bottom-20 left-1/4 w-12 h-12 bg-[#F4A261] rounded-full opacity-20 float-gentle" style="animation-delay: 2s;"></div>
+    
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center max-w-3xl mx-auto">
+        <div class="inline-block mb-6">
+          <span class="text-6xl">🌻</span>
+        </div>
+        <h1 class="font-display text-5xl md:text-7xl text-[#5B8C5A] mb-6">
+          Välkommen till <span class="chalk-underline">Ängen</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
+          En förskola där varje barn får växa i sin egen takt, omgiven av natur, kreativitet och kärlek.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/ansokan" class="inline-flex items-center justify-center px-8 py-4 bg-[#5B8C5A] text-white font-display text-xl rounded-full hover:bg-[#7FB069] transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+            Ansök om plats 🌱
+          </a>
+          <a href="/foraldrar" class="inline-flex items-center justify-center px-8 py-4 bg-white text-[#5B8C5A] font-display text-xl rounded-full hover:bg-[#FEFAE0] transition-colors border-2 border-[#5B8C5A]">
+            För föräldrar 📚
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-4xl text-center text-gray-800 mb-16">
+        Vad som gör oss <span class="chalk-underline">speciella</span>
+      </h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center p-8 rounded-2xl bg-[#FEFAE0] hover:bg-[#F4A261]/10 transition-colors group">
+          <div class="text-5xl mb-4 group-hover:scale-110 transition-transform">🌳</div>
+          <h3 class="font-display text-2xl text-[#5B8C5A] mb-3">Nära naturen</h3>
+          <p class="text-gray-600">Vi spenderar mycket tid utomhus, utforskar skogen och lär oss om växter och djur.</p>
+        </div>
+        
+        <div class="text-center p-8 rounded-2xl bg-[#E8F4F8] hover:bg-[#5B8C5A]/10 transition-colors group">
+          <div class="text-5xl mb-4 group-hover:scale-110 transition-transform">🎨</div>
+          <h3 class="font-display text-2xl text-[#5B8C5A] mb-3">Kreativitet</h3>
+          <p class="text-gray-600">Konst, musik och lek är viktiga delar av vår vardag. Varje barn får uttrycka sig fritt.</p>
+        </div>
+        
+        <div class="text-center p-8 rounded-2xl bg-[#FEFAE0] hover:bg-[#F4A261]/10 transition-colors group">
+          <div class="text-5xl mb-4 group-hover:scale-110 transition-transform">💚</div>
+          <h3 class="font-display text-2xl text-[#5B8C5A] mb-3">Omtanke</h3>
+          <p class="text-gray-600">Vi skapar en trygg miljö där alla barn känner sig sedda, hörda och värdefulla.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- News Preview Section -->
+  <section class="py-20 bg-[#FEFAE0]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center mb-12">
+        <h2 class="font-display text-4xl text-gray-800">
+          Senaste <span class="chalk-underline">nytt</span>
+        </h2>
+        <a href="/nyheter" class="text-[#5B8C5A] font-display text-lg hover:text-[#7FB069] transition-colors">
+          Se alla nyheter →
+        </a>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <div class="h-48 bg-gradient-to-br from-[#5B8C5A] to-[#7FB069] flex items-center justify-center">
+            <span class="text-6xl">🌸</span>
+          </div>
+          <div class="p-6">
+            <time class="text-sm text-gray-500">15 februari 2026</time>
+            <h3 class="font-display text-2xl text-gray-800 mt-2 mb-3">Vårens utflykt till Skansen</h3>
+            <p class="text-gray-600">Den 20 mars åker alla avdelningar till Skansen för att uppleva vårens ankomst och alla djuren.</p>
+          </div>
+        </article>
+        
+        <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <div class="h-48 bg-gradient-to-br from-[#F4A261] to-[#E76F51] flex items-center justify-center">
+            <span class="text-6xl">🏃</span>
+          </div>
+          <div class="p-6">
+            <time class="text-sm text-gray-500">10 februari 2026</time>
+            <h3 class="font-display text-2xl text-gray-800 mt-2 mb-3">Sportlov med sport och lek</h3>
+            <p class="text-gray-600">Under vecka 9 har vi fullt program med sportaktiviteter, dans och rörelse för alla barn.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calendar Preview Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center mb-12">
+        <h2 class="font-display text-4xl text-gray-800">
+          Kommande <span class="chalk-underline">händelser</span>
+        </h2>
+        <a href="/kalendarium" class="text-[#5B8C5A] font-display text-lg hover:text-[#7FB069] transition-colors">
+          Se kalendariet →
+        </a>
+      </div>
+      
+      <div class="space-y-4">
+        <div class="flex items-center gap-6 p-6 bg-[#E8F4F8] rounded-xl hover:bg-[#5B8C5A]/10 transition-colors">
+          <div class="flex-shrink-0 w-20 h-20 bg-[#5B8C5A] rounded-xl flex flex-col items-center justify-center text-white">
+            <span class="text-sm uppercase">Mars</span>
+            <span class="font-display text-3xl">20</span>
+          </div>
+          <div>
+            <h3 class="font-display text-xl text-gray-800">Utflykt till Skansen</h3>
+            <p class="text-gray-600">Alla avdelningar | Samling 09:00</p>
+          </div>
+        </div>
+        
+        <div class="flex items-center gap-6 p-6 bg-[#FEFAE0] rounded-xl hover:bg-[#F4A261]/10 transition-colors">
+          <div class="flex-shrink-0 w-20 h-20 bg-[#F4A261] rounded-xl flex flex-col items-center justify-center text-white">
+            <span class="text-sm uppercase">Mars</span>
+            <span class="font-display text-3xl">25</span>
+          </div>
+          <div>
+            <h3 class="font-display text-xl text-gray-800">Föräldramöte</h3>
+            <p class="text-gray-600">18:00 i matsalen | Information om vårens aktiviteter</p>
+          </div>
+        </div>
+        
+        <div class="flex items-center gap-6 p-6 bg-[#E8F4F8] rounded-xl hover:bg-[#5B8C5A]/10 transition-colors">
+          <div class="flex-shrink-0 w-20 h-20 bg-[#5B8C5A] rounded-xl flex flex-col items-center justify-center text-white">
+            <span class="text-sm uppercase">Apr</span>
+            <span class="font-display text-3xl">05</span>
+          </div>
+          <div>
+            <h3 class="font-display text-xl text-gray-800">Påskpyssel och äggjakt</h3>
+            <p class="text-gray-600">Hela dagen | Ta med tomt äggkartong!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
