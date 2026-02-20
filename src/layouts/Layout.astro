@@ -59,8 +59,10 @@ const navItems = [
           class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
           aria-label="Öppna meny"
         >
-          <div class="w-6 h-6 relative">
-            <span class="ball-icon absolute inset-0 flex items-center justify-center text-2xl">⚽</span>
+          <div class="w-6 h-6 relative flex flex-col justify-center items-center space-y-1.5">
+            <span class="hamburger-icon w-6 h-0.5 bg-gray-700 rounded-full transition-all"></span>
+            <span class="hamburger-icon w-6 h-0.5 bg-gray-700 rounded-full transition-all"></span>
+            <span class="hamburger-icon w-6 h-0.5 bg-gray-700 rounded-full transition-all"></span>
             <span class="close-icon absolute inset-0 flex items-center justify-center text-2xl hidden">✕</span>
           </div>
         </button>
@@ -117,21 +119,15 @@ const navItems = [
   <script>
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-    const ballIcon = menuBtn?.querySelector('.ball-icon');
+    const hamburgerIcons = menuBtn?.querySelectorAll('.hamburger-icon');
     const closeIcon = menuBtn?.querySelector('.close-icon');
     let isOpen = false;
 
     menuBtn?.addEventListener('click', () => {
       isOpen = !isOpen;
       mobileMenu?.classList.toggle('hidden');
-      ballIcon?.classList.toggle('hidden');
+      hamburgerIcons?.forEach(icon => icon.classList.toggle('hidden'));
       closeIcon?.classList.toggle('hidden');
-      
-      // Trigger ball animation
-      if (ballIcon && !isOpen) {
-        ballIcon.classList.add('ball-animation');
-        setTimeout(() => ballIcon.classList.remove('ball-animation'), 600);
-      }
     });
   </script>
 </body>
