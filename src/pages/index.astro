@@ -19,133 +19,141 @@ import Layout from '../layouts/Layout.astro';
           Välkommen till <span class="chalk-underline">Ängen</span>
         </h1>
         <p class="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
-          En förskola där varje barn får växa i sin egen takt, omgiven av natur, kreativitet och kärlek.
+          En föräldrakooperativ förskola i Vintrosa kyrkskola, 1,5 mil väster om Örebro.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/ansokan" class="inline-flex items-center justify-center px-8 py-4 bg-[#5B8C5A] text-white font-display text-xl rounded-full hover:bg-[#7FB069] transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-            Ansök om plats 🌱
+          <a href="/kontakt" class="inline-flex items-center justify-center px-8 py-4 bg-[#5B8C5A] text-white font-display text-xl rounded-full hover:bg-[#7FB069] transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+            Kontakta oss 🌱
           </a>
-          <a href="/foraldrar" class="inline-flex items-center justify-center px-8 py-4 bg-white text-[#5B8C5A] font-display text-xl rounded-full hover:bg-[#FEFAE0] transition-colors border-2 border-[#5B8C5A]">
-            För föräldrar 📚
+          <a href="/om-oss" class="inline-flex items-center justify-center px-8 py-4 bg-white text-[#5B8C5A] font-display text-xl rounded-full hover:bg-[#FEFAE0] transition-colors border-2 border-[#5B8C5A]">
+            Läs mer om oss 📚
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Features Section -->
+  <!-- About Section -->
   <section class="py-20 bg-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-display text-4xl text-center text-gray-800 mb-16">
-        Vad som gör oss <span class="chalk-underline">speciella</span>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="font-display text-4xl text-gray-800 mb-6">
+            Om <span class="chalk-underline">Ängen</span>
+          </h2>
+          <p class="text-gray-600 mb-4 leading-relaxed">
+            I nyrenoverade och restaurerade lokaler i Vintrosa kyrkskola, bredvid Vintrosa kyrka, hittar du Föräldrakooperativet Ängen. En förskola på landet med en fantastisk utemiljö för barnen.
+          </p>
+          <p class="text-gray-600 mb-4 leading-relaxed">
+            Kyrkskolan uppfördes på 1800-talet och hade stått tom i många år innan vi gjorde en omfattande renovering och restaurering enligt traditionella principer för att anpassa till förskoleverksamhet.
+          </p>
+          <p class="text-gray-600 leading-relaxed">
+            Vi har närhet till skogen och allt som finns där att utforska. Vi är utomhus varje dag, i alla väder. Det gynnar barns hälsa, minskar smittorisker, sänker ljudnivån och lockar till att upptäcka, experimentera, undersöka och lära.
+          </p>
+        </div>
+        <div class="bg-[#FEFAE0] rounded-2xl p-8">
+          <div class="text-5xl mb-4">🏫</div>
+          <h3 class="font-display text-2xl text-[#5B8C5A] mb-3">Vår skola</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li>• Nyrenoverade lokaler i Vintrosa kyrkskola</li>
+            <li>• Byggnad från 1800-talet</li>
+            <li>• Fantastisk utemiljö</li>
+            <li>• Närhet till skog och natur</li>
+            <li>• 1,5 mil väster om Örebro</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pedagogy Section -->
+  <section class="py-20 bg-[#FEFAE0]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-4xl text-center text-gray-800 mb-12">
+        Så här <span class="chalk-underline">jobbar vi</span>
       </h2>
       
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="text-center p-8 rounded-2xl bg-[#FEFAE0] hover:bg-[#F4A261]/10 transition-colors group">
-          <div class="text-5xl mb-4 group-hover:scale-110 transition-transform">🌳</div>
-          <h3 class="font-display text-2xl text-[#5B8C5A] mb-3">Nära naturen</h3>
-          <p class="text-gray-600">Vi spenderar mycket tid utomhus, utforskar skogen och lär oss om växter och djur.</p>
+        <div class="bg-white rounded-2xl p-8 hover:shadow-md transition-shadow">
+          <div class="text-5xl mb-4">🌱</div>
+          <h3 class="font-display text-2xl text-[#5B8C5A] mb-3">Utforskande lärande</h3>
+          <p class="text-gray-600">Hos oss är pedagogerna nyfikna och inspireras av barns utforskande. Barn föds kompetenta och skapar sin egen kunskap tillsammans med andra barn och vuxna.</p>
         </div>
         
-        <div class="text-center p-8 rounded-2xl bg-[#E8F4F8] hover:bg-[#5B8C5A]/10 transition-colors group">
-          <div class="text-5xl mb-4 group-hover:scale-110 transition-transform">🎨</div>
-          <h3 class="font-display text-2xl text-[#5B8C5A] mb-3">Kreativitet</h3>
-          <p class="text-gray-600">Konst, musik och lek är viktiga delar av vår vardag. Varje barn får uttrycka sig fritt.</p>
+        <div class="bg-white rounded-2xl p-8 hover:shadow-md transition-shadow">
+          <div class="text-5xl mb-4">🎭</div>
+          <h3 class="font-display text-2xl text-[#5B8C5A] mb-3">Lekfullhet</h3>
+          <p class="text-gray-600">I leken bearbetar barn sin verklighet. Därför är leken en viktig del i vårt pedagogiska arbete. Vi skapar en trygg, varm och social miljö.</p>
         </div>
         
-        <div class="text-center p-8 rounded-2xl bg-[#FEFAE0] hover:bg-[#F4A261]/10 transition-colors group">
-          <div class="text-5xl mb-4 group-hover:scale-110 transition-transform">💚</div>
-          <h3 class="font-display text-2xl text-[#5B8C5A] mb-3">Omtanke</h3>
-          <p class="text-gray-600">Vi skapar en trygg miljö där alla barn känner sig sedda, hörda och värdefulla.</p>
+        <div class="bg-white rounded-2xl p-8 hover:shadow-md transition-shadow">
+          <div class="text-5xl mb-4">🌳</div>
+          <h3 class="font-display text-2xl text-[#5B8C5A] mb-3">Utevistelse</h3>
+          <p class="text-gray-600">Vi är utomhus varje dag, i alla väder. Det gynnar barns hälsa, motoriska utveckling och lockar till att upptäcka, experimentera och undersöka.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- News Preview Section -->
-  <section class="py-20 bg-[#FEFAE0]">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center mb-12">
-        <h2 class="font-display text-4xl text-gray-800">
-          Senaste <span class="chalk-underline">nytt</span>
-        </h2>
-        <a href="/nyheter" class="text-[#5B8C5A] font-display text-lg hover:text-[#7FB069] transition-colors">
-          Se alla nyheter →
-        </a>
-      </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-          <div class="h-48 bg-gradient-to-br from-[#5B8C5A] to-[#7FB069] flex items-center justify-center">
-            <span class="text-6xl">🌸</span>
-          </div>
-          <div class="p-6">
-            <time class="text-sm text-gray-500">15 februari 2026</time>
-            <h3 class="font-display text-2xl text-gray-800 mt-2 mb-3">Vårens utflykt till Skansen</h3>
-            <p class="text-gray-600">Den 20 mars åker alla avdelningar till Skansen för att uppleva vårens ankomst och alla djuren.</p>
-          </div>
-        </article>
-        
-        <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-          <div class="h-48 bg-gradient-to-br from-[#F4A261] to-[#E76F51] flex items-center justify-center">
-            <span class="text-6xl">🏃</span>
-          </div>
-          <div class="p-6">
-            <time class="text-sm text-gray-500">10 februari 2026</time>
-            <h3 class="font-display text-2xl text-gray-800 mt-2 mb-3">Sportlov med sport och lek</h3>
-            <p class="text-gray-600">Under vecka 9 har vi fullt program med sportaktiviteter, dans och rörelse för alla barn.</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Calendar Preview Section -->
+  <!-- Food Section -->
   <section class="py-20 bg-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center mb-12">
-        <h2 class="font-display text-4xl text-gray-800">
-          Kommande <span class="chalk-underline">händelser</span>
-        </h2>
-        <a href="/kalendarium" class="text-[#5B8C5A] font-display text-lg hover:text-[#7FB069] transition-colors">
-          Se kalendariet →
-        </a>
-      </div>
-      
-      <div class="space-y-4">
-        <div class="flex items-center gap-6 p-6 bg-[#E8F4F8] rounded-xl hover:bg-[#5B8C5A]/10 transition-colors">
-          <div class="flex-shrink-0 w-20 h-20 bg-[#5B8C5A] rounded-xl flex flex-col items-center justify-center text-white">
-            <span class="text-sm uppercase">Mars</span>
-            <span class="font-display text-3xl">20</span>
-          </div>
-          <div>
-            <h3 class="font-display text-xl text-gray-800">Utflykt till Skansen</h3>
-            <p class="text-gray-600">Alla avdelningar | Samling 09:00</p>
-          </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="order-2 md:order-1 bg-[#E8F4F8] rounded-2xl p-8">
+          <div class="text-5xl mb-4">🍽️</div>
+          <h3 class="font-display text-2xl text-[#5B8C5A] mb-3">Dagens schema</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li><strong>07:30</strong> – Frukost</li>
+            <li><strong>09:00</strong> – Fruktstund</li>
+            <li><strong>11:00</strong> – Lunch</li>
+            <li><strong>14:30</strong> – Mellanmål</li>
+            <li><strong>16:30</strong> – Fruktstund</li>
+          </ul>
         </div>
-        
-        <div class="flex items-center gap-6 p-6 bg-[#FEFAE0] rounded-xl hover:bg-[#F4A261]/10 transition-colors">
-          <div class="flex-shrink-0 w-20 h-20 bg-[#F4A261] rounded-xl flex flex-col items-center justify-center text-white">
-            <span class="text-sm uppercase">Mars</span>
-            <span class="font-display text-3xl">25</span>
-          </div>
-          <div>
-            <h3 class="font-display text-xl text-gray-800">Föräldramöte</h3>
-            <p class="text-gray-600">18:00 i matsalen | Information om vårens aktiviteter</p>
-          </div>
-        </div>
-        
-        <div class="flex items-center gap-6 p-6 bg-[#E8F4F8] rounded-xl hover:bg-[#5B8C5A]/10 transition-colors">
-          <div class="flex-shrink-0 w-20 h-20 bg-[#5B8C5A] rounded-xl flex flex-col items-center justify-center text-white">
-            <span class="text-sm uppercase">Apr</span>
-            <span class="font-display text-3xl">05</span>
-          </div>
-          <div>
-            <h3 class="font-display text-xl text-gray-800">Påskpyssel och äggjakt</h3>
-            <p class="text-gray-600">Hela dagen | Ta med tomt äggkartong!</p>
-          </div>
+        <div class="order-1 md:order-2">
+          <h2 class="font-display text-4xl text-gray-800 mb-6">
+            Hemlagad <span class="chalk-underline">mat</span>
+          </h2>
+          <p class="text-gray-600 mb-4 leading-relaxed">
+            Maten är något vi tycker är viktigt och som vi prioriterar på Ängen. Vår egen kock lagar maten från grunden varje dag med ekologiska och närproducerade råvaror i den mån det är möjligt.
+          </p>
+          <p class="text-gray-600 mb-4 leading-relaxed">
+            Vi serverar endast svenskt kött och arbetar med en balanserad meny där grönsaker och vegetariska rätter har en framträdande plats.
+          </p>
+          <p class="text-gray-600 leading-relaxed">
+            Måltiderna är en viktig pedagogisk del av verksamheten. Vi skapar en strukturerad och rofylld måltidsmiljö där barnen får möjlighet att samtala, reflektera och utveckla sin självständighet.
+          </p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Tyra Section -->
+  <section class="py-20 bg-[#5B8C5A] text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="text-5xl mb-6">📱</div>
+      <h2 class="font-display text-4xl mb-4">Tyra Förskoleappen</h2>
+      <p class="text-white/80 text-lg mb-6">
+        Tyra är en plattform för information, kommunikation och dokumentation. Vi använder Tyra för att dokumentera barnens utveckling och lärande. Du som vårdnadshavare loggar in via mobiltelefon, surfplatta eller dator.
+      </p>
+      <a href="https://tyra.io/" target="_blank" class="inline-flex items-center justify-center px-8 py-4 bg-white text-[#5B8C5A] font-display text-xl rounded-full hover:bg-[#FEFAE0] transition-colors">
+        Läs mer om Tyra →
+      </a>
+    </div>
+  </section>
+
+  <!-- Contact CTA Section -->
+  <section class="py-20 bg-[#FEFAE0]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-4xl text-gray-800 mb-4">
+        Vill du veta <span class="chalk-underline">mer</span>?
+      </h2>
+      <p class="text-gray-600 text-lg mb-8">
+        Har du frågor eller funderingar? Välkommen att kontakta oss!
+      </p>
+      <a href="/kontakt" class="inline-flex items-center justify-center px-8 py-4 bg-[#5B8C5A] text-white font-display text-xl rounded-full hover:bg-[#7FB069] transition-colors shadow-lg">
+        Kontakta oss 💚
+      </a>
     </div>
   </section>
 </Layout>
