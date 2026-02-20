@@ -3,16 +3,10 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://Knappenbot.github.io',
+  base: '/angen-preschool',
+  output: 'static',
   vite: {
-    plugins: [tailwindcss()],
-    server: {
-      host: '0.0.0.0',
-      port: 3000,
-      allowedHosts: ['.local', '192.168.87.39', 'localhost']
-    }
-  },
-  server: {
-    host: '0.0.0.0',
-    port: 3000
+    plugins: [tailwindcss()]
   }
 });
